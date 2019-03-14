@@ -1,24 +1,26 @@
 class Fighter {
-    private name: string;
+    
+    public name: string;
 
-    // ufc stats
-    private sigStrikesLanded: number;
-    private sigStrikesAttempted: number;
-    private takedownsLanded: number;
-    private takedownsAttempted: number;
-    private sigStrLandedPerMin: number;
-    private sigStrAbsorbedPerMin: number;
-    private takedownAvgPer3Rounds: number;
-    private submissionAvg: number;
-    private sigStrDefense: number;
-    private takedwownDefense: number;
-    private knockdownRatio: number;
+    // ufc stats -- Initialize to NaN
+    public sigStrikesLanded = NaN;
+    public sigStrikesAttempted = NaN;
+    public takedownsLanded = NaN;
+    public takedownsAttempted = NaN;
+    public sigStrLandedPerMin = NaN;
+    public sigStrAbsorbedPerMin = NaN;
+    public takedownAvgPer3Rounds = NaN;
+    public submissionAvg = NaN;
+    public sigStrDefense = NaN;
+    public takedwownDefense = NaN;
+    public knockdownRatio = NaN;
+    public winsInLastFiveMatches = NaN;
 
     public constructor(name?: string) {
         this.name = name || "";
     }
 
-    public winsInLastFiveMatches = 0;
+
 }
 
 export default Fighter;
