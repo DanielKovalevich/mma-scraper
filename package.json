@@ -19,6 +19,7 @@
   "homepage": "https://github.com/DanielKovalevich/mma-scraper#readme",
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
+    "dotenv": "^7.0.0",
     "typescript": "^3.3.3333"
   }
 }
