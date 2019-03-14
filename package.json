@@ -18,7 +18,10 @@
   },
   "homepage": "https://github.com/DanielKovalevich/mma-scraper#readme",
   "dependencies": {
+    "azure-cognitiveservices-websearch": "^2.0.0",
     "cheerio": "^1.0.0-rc.2",
+    "ms-rest-azure": "^2.6.0",
+    "npm": "^6.9.0",
     "dotenv": "^7.0.0",
     "typescript": "^3.3.3333"
   }
