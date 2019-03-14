@@ -58,7 +58,8 @@ abstract class BingSearch {
      */
     protected static async getHtmlFromUrl(url: string) {
 
-        return await fetch(url);
+        const response = await fetch(url);
+        return await response.text();
 
     }
 
