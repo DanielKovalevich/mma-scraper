@@ -9,7 +9,7 @@ class FightMatrix extends BingSearch{
 
         // Retrieve the HTML content for FightMatrix given the fighter name provided in the function parameter
         let html = await BingSearch.getHtmlFromUrl(await this.getFighterUrl(fighterName));
-        const $ = cheerio.load(html);
+        const $ = cheerio.load(html.toString());
 
         let fighter: Fighter = new Fighter;
         // The fighter name
