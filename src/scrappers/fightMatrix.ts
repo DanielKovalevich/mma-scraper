@@ -1,24 +1,26 @@
+import BingSearch from "./BingSearch";
+import Fighter from "../models/fighter";
+
 let cheerio = require("cheerio");
 
-class Matrix {
-    public constructor() {
-        // stuff
+class FightMatrix extends BingSearch{
+
+    async getFighterInformation(fighterName: string): Promise<Fighter> {
+
+        // Retrieve the HTML content for FightMatrix given the fighter name provided in the function parameter
+        let html = await BingSearch.getHtmlFromUrl(await this.getFighterUrl(fighterName));
+        const $ = cheerio.load(html);
+
+        let fighter: Fighter = new Fighter;
+        // The fighter name
+        fighter.name = fighterName;
+
+        //TODO: Keep at this part and parse the data using Cheerio at this point!
+
+        return fighter;
+
     }
 
-    /**
-     * Function which handles pulling the URL for the fighter from the Bing search functions
-     */
-    public async getFighterUrl(fighterName: String) {
-        let CognitiveServicesCredentials = require('ms-rest-azure').CognitiveServicesCredentials;
-        let WebSearchAPIClient = require('azure-cognitiveservices-websearch');
-
-        let credentials = new CognitiveServicesCredentials(process.env.BING_API);
-        let webSearchApiClient = new WebSearchAPIClient(credentials);
-
-        let searchResult: Promise<any> = await webSearchApiClient.web.search("site:fightmatrix.com" + fighterName);
-
-        console.log(searchResult);
-    }
 }
 
-export default Matrix;
+export default FightMatrix;
